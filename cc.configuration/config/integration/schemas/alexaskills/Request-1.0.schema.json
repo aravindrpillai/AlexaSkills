@@ -1,0 +1,425 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Request": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "session": {
+          "$ref": "#/definitions/Session"
+        },
+        "context": {
+          "$ref": "#/definitions/Context"
+        },
+        "request": {
+          "$ref": "#/definitions/InnerRequest"
+        }
+      }
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "new": {
+          "type": "boolean"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "application": {
+          "$ref": "#/definitions/Application"
+        },
+        "attributes": {
+          "$ref": "#/definitions/Attributes"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "InnerRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "shouldLinkResultBeReturned": {
+          "type": "boolean"
+        },
+        "intent": {
+          "$ref": "#/definitions/Intent"
+        }
+      }
+    },
+    "Intent": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "confirmationStatus": {
+          "type": "string"
+        },
+        "slots": {
+          "$ref": "#/definitions/Slot"
+        }
+      }
+    },
+    "Slot": {
+      "type": "object",
+      "properties": {
+        "referenceNumber": {
+          "$ref": "#/definitions/ReferenceNumberSlot"
+        },
+        "incidentDate": {
+          "$ref": "#/definitions/IncidentDateSlot"
+        },
+        "incidentDescription": {
+          "$ref": "#/definitions/IncidentDescription"
+        }
+      }
+    },
+    "ReferenceNumberSlot": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "confirmationStatus": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "slotValue": {
+          "$ref": "#/definitions/SlotValue"
+        }
+      }
+    },
+    "IncidentDateSlot": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "confirmationStatus": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "slotValue": {
+          "$ref": "#/definitions/SlotValue"
+        }
+      }
+    },
+    "IncidentDescription": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "confirmationStatus": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "slotValue": {
+          "$ref": "#/definitions/SlotValue"
+        }
+      }
+    },
+    "SlotValue": {
+      "type": "object",
+      "properties": {
+        "type": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      }
+    },
+    "Attributes": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string"
+        }
+      }
+    },
+    "Application": {
+      "type": "object",
+      "properties": {
+        "applicationId": {
+          "type": "string"
+        }
+      }
+    },
+    "Context": {
+      "type": "object",
+      "properties": {
+        "Viewports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContextViewports"
+          }
+        },
+        "Viewport": {
+          "$ref": "#/definitions/ContextViewport"
+        },
+        "Extensions": {
+           "$ref": "#/definitions/Extensions"
+        },
+
+        "System": {
+          "$ref": "#/definitions/ContextSystem"
+        }
+      }
+    },
+    "Extensions": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "$ref": "#/definitions/Available"
+        }
+      }
+    },
+    "Available": {
+      "type": "object",
+      "properties": {
+        "aplext:backstack:10": {
+          "$ref": "#/definitions/Aplext"
+        }
+      }
+    },
+    "Aplext": {
+      "type": "object",
+      "properties": {
+
+      }
+    },
+    "ContextViewports": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "shape": {
+          "type": "string"
+        },
+        "dpi": {
+          "type": "integer"
+        },
+        "presentationType": {
+          "type": "string"
+        },
+        "canRotate": {
+          "type": "boolean"
+        },
+        "configuration": {
+          "$ref": "#/definitions/ContextConfiguration"
+        }
+      }
+    },
+    "ContextViewport": {
+      "type": "object",
+      "properties": {
+        "experiences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExperienceItems"
+          }
+        },
+        "mode": {
+          "type": "string"
+        },
+        "shape": {
+          "type": "string"
+        },
+        "pixelWidth": {
+          "type": "integer"
+        },
+        "pixelHeight": {
+          "type": "integer"
+        },
+        "dpi": {
+          "type": "integer"
+        },
+        "currentPixelWidth": {
+          "type": "integer"
+        },
+        "currentPixelHeight": {
+          "type": "integer"
+        },
+        "touch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "video": {
+          "$ref": "#/definitions/ContextViewPortVideo"
+        }
+      }
+    },
+    "ContextSystem": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "$ref": "#/definitions/ContextApplication"
+        },
+        "user": {
+          "$ref": "#/definitions/ContextUser"
+        },
+        "device": {
+          "$ref": "#/definitions/ContextDevice"
+        },
+        "apiEndpoint": {
+          "type": "string"
+        },
+        "apiAccessToken": {
+          "type": "string"
+        }
+      }
+    },
+    "ContextDevice": {
+      "type": "object",
+      "properties": {
+        "deviceId": {
+          "type": "string"
+        },
+        "supportedInterfaces": {
+          "$ref": "#/definitions/SupportedInterfaces"
+        }
+      }
+    },
+    "ContextUser": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      }
+    },
+    "ContextApplication": {
+      "type": "object",
+      "properties": {
+        "applicationId": {
+          "type": "string"
+        }
+      }
+    },
+    "ExperienceItems": {
+      "type": "object",
+      "properties": {
+        "arcMinuteWidth": {
+          "type": "integer"
+        },
+        "arcMinuteHeight": {
+          "type": "integer"
+        },
+        "canRotate": {
+          "type": "boolean"
+        },
+        "canResize": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ContextConfiguration": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "$ref": "#/definitions/ContectConfigurationCurrent"
+        }
+      }
+    },
+    "ContectConfigurationCurrent": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "video": {
+          "$ref": "#/definitions/ContectConfigurationCurrentVideo"
+        },
+        "size": {
+          "$ref": "#/definitions/ContectConfigurationCurrentSize"
+        }
+      }
+    },
+    "ContectConfigurationCurrentVideo": {
+      "type": "object",
+      "properties": {
+        "codecs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ContextViewPortVideo": {
+      "type": "object",
+      "properties": {
+        "codecs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ContectConfigurationCurrentSize": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "pixelWidth": {
+          "type": "integer"
+        },
+        "pixelHeight": {
+          "type": "integer"
+        }
+      }
+    },
+    "SupportedInterfaces": {
+      "type": "object",
+      "properties": {
+
+      }
+    }
+  }
+}

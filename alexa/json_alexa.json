@@ -1,0 +1,181 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "arvind insurance",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hello",
+                        "how are you",
+                        "say hi world",
+                        "say hi",
+                        "hi",
+                        "say hello world",
+                        "say hello"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "create_claim",
+                    "slots": [],
+                    "samples": [
+                        "i want to file a plane",
+                        "file a plane",
+                        "file a plain",
+                        "help me file a plain",
+                        "I need to file a claim",
+                        "help me file a claim",
+                        "want to lodge a claim",
+                        "create claim",
+                        "need to create claim",
+                        "report an accident",
+                        "File a claim",
+                        "I want to create a claim"
+                    ]
+                },
+                {
+                    "name": "claim_status",
+                    "slots": [],
+                    "samples": [
+                        "like to know the status of my claim",
+                        "status of my claim",
+                        "need to know the status of my claim",
+                        "claim status",
+                        "help me with the claim status",
+                        "whats my claim status"
+                    ]
+                },
+                {
+                    "name": "reference_number",
+                    "slots": [
+                        {
+                            "name": "referenceNumber",
+                            "type": "AMAZON.PhoneNumber"
+                        }
+                    ],
+                    "samples": [
+                        "{referenceNumber} is my policy number",
+                        "{referenceNumber} is my claim number",
+                        " claim number is {referenceNumber}",
+                        "my claim number is {referenceNumber}",
+                        "number is {referenceNumber}",
+                        "its {referenceNumber}",
+                        "{referenceNumber} ",
+                        "my policy number is {referenceNumber}",
+                        "policy number is {referenceNumber}"
+                    ]
+                },
+                {
+                    "name": "incident_date",
+                    "slots": [
+                        {
+                            "name": "incidentDate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "it happened {incidentDate}",
+                        "it happened on {incidentDate} ",
+                        "that was on {incidentDate}",
+                        "on {incidentDate}",
+                        "It was on {incidentDate}"
+                    ]
+                },
+                {
+                    "name": "incident_description",
+                    "slots": [
+                        {
+                            "name": "incidentDescription",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "you know {incidentDescription}",
+                        "yeah what happened is {incidentDescription}",
+                        "well {incidentDescription}"
+                    ]
+                },
+                {
+                    "name": "policy_information",
+                    "slots": [],
+                    "samples": [
+                        "about my policy",
+                        "tell about my policy",
+                        "billing information",
+                        "policy info",
+                        "my policy information",
+                        "help me get my policy information"
+                    ]
+                },
+                {
+                    "name": "confirmation",
+                    "slots": [],
+                    "samples": [
+                        "all good",
+                        "no thats it",
+                        "thank you",
+                        "thanks",
+                        "thats it",
+                        "no im good"
+                    ]
+                },
+                {
+                    "name": "different_policy_number",
+                    "slots": [],
+                    "samples": [
+                        "on a different policy",
+                        "different policy",
+                        "No on a different policy"
+                    ]
+                },
+                {
+                    "name": "same_policy_number",
+                    "slots": [],
+                    "samples": [
+                        "yes on the same policy",
+                        "same policy",
+                        "on the same policy"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "confirmation",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "no"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

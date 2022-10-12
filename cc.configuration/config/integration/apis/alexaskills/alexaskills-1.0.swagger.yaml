@@ -1,0 +1,33 @@
+swagger: '2.0'
+info:
+  title: "Alexa Skills API"
+  description: This API is to communicate with Alexa skills.
+  version: '1.0'
+basePath: /AlexaSkills
+x-gw-apihandlers:
+  - integrations.alexaskills.AlexaSkillsHandler
+x-gw-schema-import:
+  AlexaRequestRef : alexaskills.Request-1.0
+  AlexaResponseRef : alexaskills.Response-1.0
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /ClaimsHandler:
+    post:
+      summary: "Claims Skill"
+      description: "Skill to handle claims"
+      operationId: claimsHandler
+      parameters:
+        - name: body
+          in: body
+          description: Type of business rule
+          schema:
+            $ref: "AlexaRequestRef#/definitions/Request"
+          required: true
+      responses:
+        '200':
+          description: "Claims Response"
+          schema:
+            $ref: "AlexaResponseRef#/definitions/Response"

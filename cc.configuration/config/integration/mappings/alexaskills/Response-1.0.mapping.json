@@ -1,0 +1,76 @@
+{
+  "schemaName": "alexaskills.Response-1.0",
+  "mappers": {
+
+
+    "Response": {
+      "schemaDefinition": "Response",
+      "root": "integrations.alexaskills.dto.FNOLResponseDTO",
+      "properties": {
+        "version": {
+          "path": "FNOLResponseDTO.Version"
+        },
+        "response": {
+          "path": "FNOLResponseDTO.Response",
+          "mapper": "#/mappers/InnerResponse",
+          "predicate": "FNOLResponseDTO.Response != null"
+        },
+        "sessionAttributes": {
+          "path": "FNOLResponseDTO.SessionAttributes",
+          "mapper": "#/mappers/SessionAttribute",
+          "predicate": "FNOLResponseDTO.SessionAttributes != null"
+        },
+        "userAgent": {
+          "path": "FNOLResponseDTO.UserAgent"
+        }
+      }
+    },
+
+
+
+    "InnerResponse": {
+      "schemaDefinition": "InnerResponse",
+      "root": "integrations.alexaskills.dto.FNOLResponseDTO.ResponseDTO",
+      "properties": {
+        "shouldEndSession": {
+          "path": "ResponseDTO.ShouldEndSession"
+        },
+        "type": {
+          "path": "ResponseDTO.Type"
+        },
+        "outputSpeech": {
+          "path": "ResponseDTO.OutputSpeech",
+          "mapper": "#/mappers/OutputSpeech",
+          "predicate": "ResponseDTO.OutputSpeech != null"
+        }
+      }
+    },
+
+
+
+    "OutputSpeech": {
+      "schemaDefinition": "OutputSpeech",
+      "root": "integrations.alexaskills.dto.FNOLResponseDTO.OutputSpeechDTO",
+      "properties": {
+        "type": {
+          "path": "OutputSpeechDTO.Type"
+        },
+        "ssml": {
+          "path": "OutputSpeechDTO.Ssml"
+        }
+      }
+    },
+
+
+
+    "SessionAttribute": {
+      "schemaDefinition": "SessionAttribute",
+      "root": "integrations.alexaskills.dto.FNOLResponseDTO.SessionAttributesDTO",
+      "properties": {
+        "locale": {
+          "path": "SessionAttributesDTO.Locale"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Response": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "response": {
+          "$ref" : "#/definitions/InnerResponse"
+        },
+        "sessionAttributes": {
+          "$ref" : "#/definitions/SessionAttribute"
+        },
+        "userAgent": { "type": "string" }
+      }
+    },
+
+    "InnerResponse" : {
+      "type": "object",
+      "properties": {
+        "outputSpeech": {
+          "$ref": "#/definitions/OutputSpeech"
+        },
+        "shouldEndSession": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+
+    "SessionAttribute" : {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string"
+        }
+      }
+    },
+
+    "OutputSpeech": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "ssml": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+
+
+}

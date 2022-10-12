@@ -1,0 +1,72 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sslCertificateType": "SelfSigned",
+          "uri": "https://aa9a-80-3-207-36.eu.ngrok.io/cc/rest/AlexaSkills/ClaimsHandler"
+        },
+        "interfaces": [],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "sslCertificateType": "SelfSigned",
+              "uri": "https://aa9a-80-3-207-36.eu.ngrok.io/cc/rest/AlexaSkills/ClaimsHandler"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "sslCertificateType": "SelfSigned",
+              "uri": "https://aa9a-80-3-207-36.eu.ngrok.io/cc/rest/AlexaSkills/ClaimsHandler"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "sslCertificateType": "SelfSigned",
+              "uri": "https://aa9a-80-3-207-36.eu.ngrok.io/cc/rest/AlexaSkills/ClaimsHandler"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "containsAds": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "locales": {
+        "en-GB": {}
+      },
+      "shoppingKit": {
+        "isShoppingActionsEnabled": false,
+        "isAmazonAssociatesOnAlexaEnabled": false
+      },
+      "usesPersonalInfo": false
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "BUSINESS_AND_FINANCE",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-GB": {
+          "description": "Arvind Insurance",
+          "examplePhrases": [
+            "Alexa open arvind insurance",
+            "invoke arvind insurance",
+            "tell arvind insurance"
+          ],
+          "keywords": [
+            "insuance"
+          ],
+          "name": "Arvind Insurance",
+          "summary": "Arvind Insurance"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}
